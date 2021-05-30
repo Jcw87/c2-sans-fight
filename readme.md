@@ -4,6 +4,10 @@ It was made with [Construct 2](https://www.scirra.com/construct2).
 
 NOW AVAILABLE! [Custom attacks guide](Documentation/README.MD)
 -----------------------------------------------------
+Audio controls:
+- V to increase
+- B to decreaseb
+=======
 
 Known Issues
 ------------

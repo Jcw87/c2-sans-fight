@@ -358,6 +358,80 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="309707349194850">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="111808787882335" type="Keyboard">
+                                    <param id="0" name="Key">86</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="832351271071997" type="System">
+                                    <param id="0" name="Variable">Volume</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">-60</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="10" name="Set master volume" sid="210115339531550" type="Audio">
+                                    <param id="0" name="dB">Audio.MasterVolume - 0.2</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="756383051927488" type="System">
+                                    <param id="0" name="Variable">Volume</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="770119027601226">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="688740742718760" type="System">
+                                            <param id="0" name="Variable">Volume</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">-60</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="8" name="Set silent" sid="639589446531400" type="Audio">
+                                            <param id="0" name="Mode">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="362634464076354">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="837677828931780" type="Keyboard">
+                                    <param id="0" name="Key">66</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="247845785980241" type="System">
+                                    <param id="0" name="Variable">Volume</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="10" name="Set master volume" sid="189796149482971" type="Audio">
+                                    <param id="0" name="dB">Audio.MasterVolume + 0.2</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="957556227710295" type="System">
+                                    <param id="0" name="Variable">Volume</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="777458692227246">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="241597148547209" type="System">
+                                            <param id="0" name="Variable">Volume</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">-60</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="8" name="Set silent" sid="660645582749282" type="Audio">
+                                            <param id="0" name="Mode">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                     </sub-events>
                 </event-group>
                 <event-group description="" sid="726194741738483" title="Touch">
