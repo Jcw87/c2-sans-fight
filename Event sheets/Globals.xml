@@ -18,5 +18,7 @@
         <variable constant="0" name="MaxHP" sid="2742940924955148" static="0" type="number">92</variable>
         <variable constant="0" name="KR" sid="2189987320058474" static="0" type="number">0</variable>
         <variable constant="0" name="KR_T" sid="8948293770944489" static="0" type="number">0</variable>
+        <variable constant="0" name="MUSIC" sid="970605853181225" static="0" type="number">1</variable>
+        <variable constant="0" name="DAMAGE" sid="226577866124016" static="0" type="number">1</variable>
     </events>
 </c2eventsheet>
