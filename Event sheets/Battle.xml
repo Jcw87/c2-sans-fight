@@ -121,6 +121,11 @@
                             <param id="1" name="Comparison">1</param>
                             <param id="2" name="Value">MODE_NORMAL</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="939966465870983" type="System">
+                            <param id="0" name="Variable">MUSIC</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Play" sid="4080759880781125" type="Audio">
@@ -352,13 +357,30 @@
                                             <param id="0" name="Name">&quot;EndAttack&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                        <action id="0" name="Play" sid="687530192848918" type="Audio">
-                                            <param id="0" name="Audio file">mus_zz_megalovania</param>
-                                            <param id="2" name="Loop">1</param>
-                                            <param id="3" name="Volume">0</param>
-                                            <param id="1" name="Tag (optional)">&quot;Music&quot;</param>
-                                        </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="113152013838079">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="818578028974037" type="System">
+                                                    <param id="0" name="Variable">MUSIC</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="687530192848918" type="Audio">
+                                                    <param id="0" name="Audio file">mus_zz_megalovania</param>
+                                                    <param id="2" name="Loop">1</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;Music&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="227284396038694">
+                                    <conditions />
+                                    <actions />
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -1267,6 +1289,11 @@
                                     <conditions>
                                         <condition id="5" inverted="1" name="Is tag playing" sid="3373887249691799" type="Audio">
                                             <param id="0" name="Tag">&quot;Music&quot;</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="102902953279985" type="System">
+                                            <param id="0" name="Variable">MUSIC</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
