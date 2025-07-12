@@ -57,7 +57,7 @@ Jump to a line if the first test value is less than the second test value
 * TestValue2
 
 
-### JMPG (Jump if not greater) ###
+### JMPNG (Jump if not greater) ###
 Jump to a line if the first test value is less than the second test value
 * AbsoluteLineNumber
 * TestValue1
