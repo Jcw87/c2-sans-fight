@@ -157,6 +157,10 @@
                             <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
                             <param id="1" name="Parameter {n}">0{###}192{###}224{###}4{###}&quot;Custom attack&quot;{###}&quot;MenuModeCustom&quot;</param>
                         </action>
+                        <action id="0" name="Call function" sid="647987750913328" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}256{###}5{###}&quot;Options&quot;{###}&quot;MenuModeOptions&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="1934787540782705">
@@ -334,10 +338,6 @@
                             <param id="2" name="X">0</param>
                             <param id="3" name="Y">32</param>
                         </action>
-                        <action id="-7" name="Set size" sid="6270522023803733" type="DefaultFont">
-                            <param id="0" name="Width">640</param>
-                            <param id="1" name="Height">32</param>
-                        </action>
                         <action id="2" name="Set scale" sid="9060833632224235" type="DefaultFont">
                             <param id="0" name="Scale">2</param>
                         </action>
@@ -478,6 +478,166 @@
                         <action id="-10" name="Set value" sid="9241165621789806" type="BattleFont">
                             <param id="0" name="Instance variable">Timeout</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="180536536734664">
+                    <conditions>
+                        <condition id="0" name="On function" sid="281812231922897" type="Function">
+                            <param id="0" name="Name">&quot;MenuModeOptions&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="750743716821897" type="MenuItem" />
+                        <action id="-9" name="Destroy" sid="908125316370276" type="DefaultFont" />
+                        <action id="0" name="Call function" sid="540119107323912" type="Function">
+                            <param id="0" name="Name">&quot;MenuBackAction&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;MenuMain&quot;</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="628488364856121" type="System">
+                            <param id="0" name="Object to create">DefaultFont</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">32</param>
+                        </action>
+                        <action id="2" name="Set scale" sid="849064880823009" type="DefaultFont">
+                            <param id="0" name="Scale">2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="157925185353385" type="DefaultFont">
+                            <param id="0" name="Text">&quot;Options&quot;</param>
+                        </action>
+                        <action id="7" name="Set horizontal alignment" sid="835516085969874" type="DefaultFont">
+                            <param id="0" name="Horizontal alignment">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="646372684188044" type="Function">
+                            <param id="0" name="Name">&quot;InflateMusicMenu&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-7" name="Set size" sid="698282710040703" type="DefaultFont">
+                            <param id="0" name="Width">640</param>
+                            <param id="1" name="Height">32</param>
+                        </action>
+                        <action id="0" name="Call function" sid="921447393294026" type="Function">
+                            <param id="0" name="Name">&quot;InflateDamageMenu&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="604882263382183">
+                    <conditions>
+                        <condition id="0" name="On function" sid="777593835797666" type="Function">
+                            <param id="0" name="Name">&quot;InflateMusicMenu&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="355910794728814">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="330367611357200" type="System">
+                                    <param id="0" name="Variable">MUSIC</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="226881653061889" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">0{###}192{###}96{###}0{###}&quot;Enable music&quot;{###}&quot;ToggleMusic&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="835110928860504">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="943412530247295" type="System">
+                                    <param id="0" name="Variable">MUSIC</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="464830689172905" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">0{###}192{###}96{###}0{###}&quot;Disable music&quot;{###}&quot;ToggleMusic&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="932668235805102">
+                    <conditions>
+                        <condition id="0" name="On function" sid="355123289691150" type="Function">
+                            <param id="0" name="Name">&quot;ToggleMusic&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="571579044651725" type="System">
+                            <param id="0" name="Variable">MUSIC</param>
+                            <param id="1" name="Value">MUSIC ? 0 : 1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="792346871488374" type="Function">
+                            <param id="0" name="Name">&quot;MenuModeOptions&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="830654571412556">
+                    <conditions>
+                        <condition id="0" name="On function" sid="395832964649466" type="Function">
+                            <param id="0" name="Name">&quot;InflateDamageMenu&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="706525822694981">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="128643540689373" type="System">
+                                    <param id="0" name="Variable">DAMAGE</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="343131775585437" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">0{###}192{###}128{###}1{###}&quot;Enable damage&quot;{###}&quot;ToggleDamage&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="388325690961162">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="234054167840671" type="System">
+                                    <param id="0" name="Variable">DAMAGE</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="701860272012791" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">0{###}192{###}128{###}1{###}&quot;Disable damage&quot;{###}&quot;ToggleDamage&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="202956094234849">
+                    <conditions>
+                        <condition id="0" name="On function" sid="788055531508735" type="Function">
+                            <param id="0" name="Name">&quot;ToggleDamage&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="141577679111579" type="System">
+                            <param id="0" name="Variable">DAMAGE</param>
+                            <param id="1" name="Value">DAMAGE ? 0 : 1</param>
+                        </action>
+                        <action id="6" name="Pop" sid="795884413182194" type="MenuStack">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Axis">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="339283702583434" type="Function">
+                            <param id="0" name="Name">&quot;MenuModeOptions&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
@@ -685,5 +845,9 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="804631901764125">
+            <conditions />
+            <actions />
+        </event-block>
     </events>
 </c2eventsheet>

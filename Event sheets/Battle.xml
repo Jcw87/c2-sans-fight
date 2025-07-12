@@ -121,6 +121,11 @@
                             <param id="1" name="Comparison">1</param>
                             <param id="2" name="Value">MODE_NORMAL</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="939966465870983" type="System">
+                            <param id="0" name="Variable">MUSIC</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Play" sid="4080759880781125" type="Audio">
@@ -352,13 +357,30 @@
                                             <param id="0" name="Name">&quot;EndAttack&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                        <action id="0" name="Play" sid="687530192848918" type="Audio">
-                                            <param id="0" name="Audio file">mus_zz_megalovania</param>
-                                            <param id="2" name="Loop">1</param>
-                                            <param id="3" name="Volume">0</param>
-                                            <param id="1" name="Tag (optional)">&quot;Music&quot;</param>
-                                        </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="113152013838079">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="818578028974037" type="System">
+                                                    <param id="0" name="Variable">MUSIC</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="687530192848918" type="Audio">
+                                                    <param id="0" name="Audio file">mus_zz_megalovania</param>
+                                                    <param id="2" name="Loop">1</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;Music&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="227284396038694">
+                                    <conditions />
+                                    <actions />
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -1268,6 +1290,11 @@
                                         <condition id="5" inverted="1" name="Is tag playing" sid="3373887249691799" type="Audio">
                                             <param id="0" name="Tag">&quot;Music&quot;</param>
                                         </condition>
+                                        <condition id="-14" name="Compare variable" sid="102902953279985" type="System">
+                                            <param id="0" name="Variable">MUSIC</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Play" sid="3571287415179704" type="Audio">
@@ -1483,6 +1510,29 @@
                     <param id="1" name="Parameter {n}">&quot;alright, i guess&quot; &amp; newline &amp; &quot;you win.&quot;{###}&quot;Win2&quot;</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="992882692552012">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="746857736111961" type="System">
+                            <param id="0" name="Variable">DAMAGE</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="390047266389742" type="SpeechBubble" />
+                        <action id="0" name="Call function" sid="361830294374621" type="Function">
+                            <param id="0" name="Name">&quot;SansText&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;but you have the damage disabled&quot;{###}0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="195339738143322" type="SpeechBubble" />
+                        <action id="0" name="Call function" sid="199469299643695" type="Function">
+                            <param id="0" name="Name">&quot;SansText&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;it is ike nothing&quot;{###}0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="6230643792485007">
             <conditions>
@@ -7798,6 +7848,27 @@
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="868786666281991">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="258016842262427" type="System">
+                                    <param id="0" name="Variable">DAMAGE</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="434213498962079" type="System">
+                                    <param id="0" name="Variable">HP</param>
+                                    <param id="1" name="Value">MaxHP</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="108852688165292" type="System">
+                                    <param id="0" name="Variable">KR</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="9017895024442913">
                     <conditions>
